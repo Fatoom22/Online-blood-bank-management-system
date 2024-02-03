@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageCenter.master.cs" Inherits="MasterPageCenter" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Blood Bank System</title>
+    <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .logo {
+            width: 100%;
+            height: 220px;
+        }
+
+        .nav {
+            background-color:#ad1f48;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        .nav-link {
+            font-weight: bold;
+            font-size: medium;
+            color: #FFFFFF;
+            text-decoration: none;
+            width: 255px;
+            text-align: center;
+            padding: 10px 20px;
+            margin: 0 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            background-color: #E74C3C;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .footer {
+            background-color: #ad1f48;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 10px;
+            font-size: small;
+        }
+        @media screen and (max-width: 768px) {
+            .nav {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+           <asp:Image ID="Image1" runat="server" ImageUrl="~/images/BloodDonation.png" width="100%" Height="300px" CssClass="logo header-image" />
+        <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" style="font-size: Medium; font-weight: 700; color: #000000"></asp:Label>
+        </div>
+        <div class="nav">
+            <asp:HyperLink ID="HyperLink1" runat="server" CssClass="nav-link" NavigateUrl="~/CenterPage.aspx">Search Blood</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink2" runat="server" CssClass="nav-link" NavigateUrl="AddBloodRequest.aspx">Add Blood Request</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink3" runat="server" CssClass="nav-link" NavigateUrl="EditRequest.aspx">Edit Requests</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink6" runat="server" CssClass="nav-link" NavigateUrl="~/SearchDonorInformation.aspx">Search Donor Information</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink5" runat="server" CssClass="nav-link" NavigateUrl="Logout.aspx">Logout</asp:HyperLink>
+        </div>
+        <div class="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <!-- Add your content here -->
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="footer">
+            (Online Blood Bank Management System) - Jazan University 2024
+        </div>
+    </form>
+</body>
+</html>
